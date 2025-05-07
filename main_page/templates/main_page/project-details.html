@@ -1,0 +1,193 @@
+{% extends "main_page/base.html" %}
+
+{% block head %}
+    <style>
+        /* Additional styles specific to project details page */
+        .project-header {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .project-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-item i {
+            color: #3498db;
+        }
+
+        .project-section {
+            margin-bottom: 3rem;
+        }
+
+        .project-section h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tech-item {
+            background: #e1f0fa;
+            color: #3498db;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            color: #2980b9;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="/#home">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#skills">Skills</a></li>
+                <li><a href="/#projects">Projects</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="project-header">
+        <div class="container">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            <h1>Project Title</h1>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    <span>Completed: January 2024</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Category: Data Science</span>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-link"></i>
+                    <a href="#" target="_blank">View Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-content">
+        <section class="project-section">
+            <h3>Project Overview</h3>
+            <p>Detailed description of the project, its purpose, and the problems it solves. This section should provide a comprehensive overview of what the project is about and why it matters.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Technical Details</h3>
+            <p>Explanation of the technical implementation, architecture decisions, and key features. This section should highlight the technical complexity and innovation of the project.</p>
+            <div class="tech-stack">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">Machine Learning</span>
+                <span class="tech-item">Data Analysis</span>
+                <span class="tech-item">TensorFlow</span>
+                <span class="tech-item">Pandas</span>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h3>Key Features</h3>
+            <ul>
+                <li>Feature 1: Description of the first major feature</li>
+                <li>Feature 2: Description of the second major feature</li>
+                <li>Feature 3: Description of the third major feature</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h3>Project Gallery</h3>
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h3>Challenges & Solutions</h3>
+            <p>Description of the main challenges faced during development and how they were overcome. This section demonstrates problem-solving abilities and technical expertise.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Results & Impact</h3>
+            <p>Discussion of the project's outcomes, impact, and any measurable results. This section should highlight the value and success of the project.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+{% endblock %}
