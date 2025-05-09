@@ -96,7 +96,7 @@
 {% block content %}
     <nav class="navbar">
         <div class="nav-content">
-            <div class="logo">Your Name</div>
+            <div class="logo">Robson França</div>
             <ul class="nav-links">
                 <li><a href="/#home">Home</a></li>
                 <li><a href="/#about">About</a></li>
@@ -109,18 +109,18 @@
 
     <header class="project-header">
         <div class="container">
-            <a href="index.html#projects" class="back-button">
+            <a href="/#projects" class="back-button">
                 <i class="fas fa-arrow-left"></i> Back to Projects
             </a>
-            <h1>Project Title</h1>
+            <h1>{{ project.title }}</h1>
             <div class="project-meta">
                 <div class="meta-item">
                     <i class="fas fa-calendar"></i>
-                    <span>Completed: January 2024</span>
+                    <span>Completed: {{ project.completed_date }}</span>
                 </div>
                 <div class="meta-item">
                     <i class="fas fa-code-branch"></i>
-                    <span>Category: Data Science</span>
+                    <span>Category: {{ project.category }}</span>
                 </div>
                 <div class="meta-item">
                     <i class="fas fa-link"></i>
@@ -133,59 +133,51 @@
     <main class="project-content">
         <section class="project-section">
             <h3>Project Overview</h3>
-            <p>Detailed description of the project, its purpose, and the problems it solves. This section should provide a comprehensive overview of what the project is about and why it matters.</p>
+            <p>{{ project.overview }}</p>
         </section>
 
         <section class="project-section">
             <h3>Technical Details</h3>
-            <p>Explanation of the technical implementation, architecture decisions, and key features. This section should highlight the technical complexity and innovation of the project.</p>
+            <p>{{ project.technical_details }}</p>
             <div class="tech-stack">
-                <span class="tech-item">Python</span>
-                <span class="tech-item">Machine Learning</span>
-                <span class="tech-item">Data Analysis</span>
-                <span class="tech-item">TensorFlow</span>
-                <span class="tech-item">Pandas</span>
+                {% for skill in project.skills.all %}
+                <span class="tech-item">{{ skill.name }}</span>
+                {% endfor %}
             </div>
         </section>
 
         <section class="project-section">
             <h3>Key Features</h3>
             <ul>
-                <li>Feature 1: Description of the first major feature</li>
-                <li>Feature 2: Description of the second major feature</li>
-                <li>Feature 3: Description of the third major feature</li>
+                <li>{{ project.key_features }}</li>
             </ul>
         </section>
 
         <section class="project-section">
             <h3>Project Gallery</h3>
             <div class="project-gallery">
+                {% for image in project.gallery.all %}
                 <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 1">
+                    <img src="{{ image.url }}" alt="Project Screenshot">
                 </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 2">
-                </div>
-                <div class="gallery-item">
-                    <img src="https://via.placeholder.com/600x400" alt="Project Screenshot 3">
-                </div>
+                {% endfor %}
             </div>
         </section>
 
         <section class="project-section">
             <h3>Challenges & Solutions</h3>
-            <p>Description of the main challenges faced during development and how they were overcome. This section demonstrates problem-solving abilities and technical expertise.</p>
+            <p>{{ project.challenges_solution }}</p>
         </section>
 
         <section class="project-section">
             <h3>Results & Impact</h3>
-            <p>Discussion of the project's outcomes, impact, and any measurable results. This section should highlight the value and success of the project.</p>
+            <p>{{ project.results_impact }}</p>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2024 Robson S. França. All rights reserved.</p>
         </div>
     </footer>
 

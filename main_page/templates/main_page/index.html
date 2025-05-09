@@ -1,4 +1,5 @@
 {% extends "main_page/base.html" %}
+{% load static %}
 
 {% block content %}
     <nav class="navbar">
@@ -27,12 +28,17 @@
     </section>
 
     <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a passionate programmer and scientist dedicated to solving complex problems through innovative solutions. My background combines technical expertise with scientific methodology, allowing me to approach challenges from multiple perspectives.</p>
-                    <p>With experience in both software development and scientific research, I bring a unique perspective to every project I undertake.</p>
+        <div class="container about-container">
+            <div class="about-photo">
+                <img class="about-photo" src="{% static 'main_page/images/profile.jpeg' %}" alt="Robson França">
+            </div>
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I am a <span class="highlight">programmer</span> and <span class="highlight">scientist</span> dedicated to solving complex problems through innovative solutions. My background combines technical expertise with scientific methodology, allowing me to approach challenges from multiple perspectives.</p>
+                        <p>With experience in <span class="highlight">game development</span> and <span class="highlight">physics research</span>, I bring a unique perspective to every project I undertake. I'm currently a student of <span class="highlight">Computer Science</span> at Insper.</p>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,9 +70,8 @@
                     <h3>Tools & Technologies</h3>
                     <ul>
                         <li>Git</li>
-                        <li>Docker</li>
-                        <li>Machine Learning</li>
-                        <li>Cloud Computing</li>
+                        <li>SDL library</li>
+                        <li>DJango</li>
                     </ul>
                 </div>
             </div>
@@ -87,45 +92,25 @@
                         <span>{{ skill.name }}</span>
                         {% endfor %}
                     </div>
-                    <a href="/project-details/" class="btn">Learn More</a>
+                    <a href="/project-details/{{ project.id }}" class="btn">Learn More</a>
                 </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>robsonsf@al.insper.edu.br</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+55 (11) 95951-9314</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <form method="POST" class="contact-form">
-                    {% csrf_token %}
-                    <input id="name" name="name" type="text" placeholder="Name" required>
-                    <input id="email" name="email" type="email" placeholder="Email" required>
-                    <textarea id="message" name="message" placeholder="Message" required></textarea>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
+    <footer>
+    <div class="container">
+        <h3>Contact me</h3>
+        <div class="contact-container">
+            <div class="social-links">
+                <a href="mailto:robsonsf@al.insper.edu.br"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/VihOht" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/robson-fran%C3%A7a-981276257/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Robson S. França. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="container">
+        <p>&copy; 2024 Robson S. França. All rights reserved.</p>
+    </div>
+</footer>
 {% endblock %}
