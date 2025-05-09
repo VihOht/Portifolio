@@ -149,7 +149,11 @@
         <section class="project-section">
             <h3>Key Features</h3>
             <ul>
-                <li>{{ project.key_features }}</li>
+                {% for feature in project.key_features.all %}
+                <li>{{ feature.name }}</li>
+                <p>{{ feature.description }}</p>
+
+                {% endfor %}
             </ul>
         </section>
 
